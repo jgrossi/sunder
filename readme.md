@@ -4,18 +4,20 @@
 
 ## Installation
 
-Just clone this repo inside a `sunder` folder inside your `wp-content/plugins` folder or install it using Wordpress Plugin page. After copy the folder contents just activate the plugin inside your Wordpress Administration area.
+Just clone this repo inside a `sunder` folder inside your `wp-content/plugins` folder or install it using Wordpress Plugin page (not yet there). After copy the folder contents just activate the plugin inside your Wordpress Administration area.
 
 ```bash
 cd wp-content/plugins
 git clone git@github.com:jgrossi/sunder.git sunder
 ```
 
+You can install Sunder downloading the `zip` file and extracting it inside `wp-content/plugins` folder. After that activate the plugin in the Wordpress administration panel.
+
 ## Usage
 
 Generally when fetching data from a Wordpress database in a theme you use just one file, like `page.php` for example. In this file you have HTML code and PHP code to query WP posts to be shown in the theme file.
 
-This plugin separates logic from views. The same `page.php` file will be the *logic* file, where you will have only the PHP code:
+This plugin separates logic from views. The same `page.php` file will be the *logic* file, where you will have only the PHP code like this:
 
 ```php
 <?php /* Template Name: Services */
@@ -30,9 +32,9 @@ $gallery = get_field('gallery');
 return render('views/services', compact('content', 'topics', 'video', 'gallery'));
 ```
 
-Now you are calling the view file, sending `$content`, `$topics`, `$video` and `$gallery` variables to it. This file is located in `views/services`. By default the `.php` extension is used to load the file.
+Now you are calling the view file - in `views/services.php` this case -, sending `$content`, `$topics`, `$video` and `$gallery` variables to it. By default the `.php` extension is used to load the file, so you can omit it.
 
-In the view file you can get the variables as a `$view` property, like `$view->gallery`. The `views/services.php` file will look like:
+In the view file you can get the variables as a `$view` object property, like `$view->gallery`. The `views/services.php` file will look like:
 
 ```php
 <?php get_header() ?>
