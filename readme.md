@@ -50,6 +50,21 @@ In the view file you can get the variables as a `$view` object property, like `$
 
 I prefer to use the template files inside a `views` folder, but you can use the name you want.
 
+## Helpers / Functions
+
+Sunder comes with some assets helper to make your code cleaner. Sure you can change the default options but the base configuration is:
+
+- assets in the `assets` folder;
+- javascript files in `assets/js` folder;
+- css|less files in `assets/css` folder;
+- image files in `assets/img` folder;
+
+So, inside your view file you can call just `<?= js('scripts') ?>`, `<?= css('styles') ?>` or `<?= img('logo.png') ?>`. You can use the `asset` helper too: 
+
+```php
+<?= asset('css/styles.css') ?>
+```
+
 ## Contributing
 
 Thank you for considering contributing to the Sunder Wordpress Plugin! Suggest new features, change files and create a pull request to the `dev` branch. Any question just ask in `issues` section. Any help or suggestion is welcome!
