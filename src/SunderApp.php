@@ -20,7 +20,6 @@ class SunderApp
             'js' => 'assets/js',
             'css' => 'assets/css',
             'img' => 'assets/img',
-            'controllers' => 'controllers',
         ];
 
         $this->folders = array_merge($default, $folders);
